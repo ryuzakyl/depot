@@ -1,0 +1,17 @@
+<h1>Say Controller Playtime</h1>
+
+<hr />
+
+<ul>
+  <li>Addition: <%= 1+2 %></li>
+  <li>Concatenation: <%= 'cow' + 'boy' %></li>
+  <li>Time in one hour: <%= 1.hour.from_now.localtime %></li>
+</ul>
+
+<hr />
+
+<ul>
+  <% for file in @files %>
+      <li>Filename: <%= file %></li>
+  <% end %>
+</ul>
