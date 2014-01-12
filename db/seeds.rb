@@ -5,3 +5,36 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Product.delete_all
+Product.create!(title: 'CoffeeScript',
+                description:
+                    %{<p>
+                          CoffeeScript is JavaScript done right. It provides all of JavaScript's
+	                        functionality wrapped in a cleaner, more succinct syntax.
+                     </p>},
+                image_url:   'coffee.jpg',
+                price: 36.00)
+# . . .
+Product.create!(title: 'Learning Python 2.7 & 3.3',
+                description:
+                    %{<p>
+                          Python is a popular open source programming language used for both standalone pro-
+                          grams and scripting applications in a wide variety of domains. It is free, portable, pow-
+                          erful, and is both relatively easy and remarkably fun to use. Programmers from every
+                          corner of the software industry have found Python’s focus on developer productivity
+                          and software quality to be a strategic advantage in projects both large and small.
+                     </p>},
+                image_url: 'python.jpg',
+                price: 49.95)
+# . . .
+
+Product.create!(title: 'The Definitive Guide to Django',
+                description:
+                    %{<p>
+                          At its best, Web development is an exciting, creative act; at its worst, it can be a repeti-
+                          tive, frustrating nuisance. <em>Django</em> lets you focus on the fun stuff—the crux of your Web
+                          application—while easing the pain of the repetitive bits. In doing so, it provides high-level
+                      </p>},
+                image_url: 'django.jpg',
+                price: 34.95)
