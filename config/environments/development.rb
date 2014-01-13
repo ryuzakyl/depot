@@ -9,8 +9,10 @@ Depot::Application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  # Show full error reports and disable caching.
+  # Show full error reports
   config.consider_all_requests_local       = true
+
+  # performing caching on controllers (just for testing) and then disabled it
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.

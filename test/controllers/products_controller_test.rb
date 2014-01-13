@@ -52,4 +52,15 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to products_path
   end
+
+  test "should get products" do
+    get :index
+    assert_response(:success)
+
+    #NOTE: As always, data is loaded from fixtures
+
+    # checking for new changes made into store controller and view
+    assert_select('#columns #side a', minimum: 4)
+    assert_select('table tr', 3)
+  end
 end

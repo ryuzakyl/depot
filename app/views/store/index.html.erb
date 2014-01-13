@@ -1,0 +1,29 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Your Pragmatic Catalog</h1>
+
+<% cache ['store', Product.latest] do %>
+    <% @products.each do |product| %>
+        <% cache ['entry', product] do %>
+            <div class="entry">
+              <%= image_tag(product.image_url) %>
+              <h3><%= product.title %></h3>
+              <%= sanitize(product.description) %>
+              <div class="price_line">
+                <span class="price"><%= number_to_currency(product.price) %></span>
+                <span class="price"><%= number_to_currency(product.price, :unit => 'CAN$', :precision => 2) %></span>
+                <%= button_to('Add to Cart', line_items_path(product_id: product)) %>
+              </div>
+            </div>
+        <% end %>
+    <% end %>
+<% end %>
+
+<br />
+
+<% if @store_visits > 5 %>
+    <span>The Store has been visited by <%= pluralize(@store_visits, 'buyer') %>.</span>
+<% end %>
+
