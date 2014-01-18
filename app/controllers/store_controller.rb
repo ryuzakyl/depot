@@ -1,6 +1,9 @@
 class StoreController < ApplicationController
   include StoreVisits
 
+  include CurrentCart
+  before_action :set_cart
+
   def index
     # logging store visits
     @store_visits = log_store_visits()

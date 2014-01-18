@@ -1,0 +1,12 @@
+<%# animating if we have exactly one item in cart%>
+if ($('#cart tr').length == 1)
+{
+    $('#cart').show('blind', 1000);
+}
+
+<%# This simple template tells the browser to replace the content of the element
+whose id="cart" with that HTML. %>
+$('#cart').html("<%= escape_javascript render(@cart) %>");
+
+<%# fading animation %>
+$('#current_item').css({'background-color':'#88ff88'}).animate({'background-color':'#114411'}, 1000);
